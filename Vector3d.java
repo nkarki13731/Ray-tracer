@@ -25,4 +25,8 @@ public class Vector3d {
     public Vector3d add(Vector3d other){
         return new Vector3d(this.x + other.getX(), this.y+ other.getY(),this.z+other.getZ());
     }
+    public Vector3d scale(float scalaer){
+        return new Vector3d(scalaer*this.x,scalaer*this.y,scalaer*this.z);
+
+    }
 }
