@@ -1,22 +1,22 @@
 public class ImageColor {
-    public float getB() {
+    public int getB() {
         return b;
     }
 
-    public float getG() {
+    public int getG() {
         return g;
     }
 
-    public float getR() {
+    public int getR() {
         return r;
     }
 
-    private float r;
+    private int r;
 
-    private float g;
-    private float b;
+    private int g;
+    private int b;
 
-    public ImageColor(float r, float g, float b){
+    public ImageColor(int r, int g, int b){
         this.r = r;
         this.b = b;
         this.g = g;
