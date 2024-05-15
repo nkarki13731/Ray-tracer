@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.Optional;
 
 public class main {
     public static void main(String[] args) {
@@ -14,7 +15,7 @@ public class main {
                         new Vector3d
                                 (-1f,-0.75f,0f))
                                 ,new Vector3d(0,0,-1)
-                                ,new Sphere(new Vector3d(0, 0, -0.8f),0.4f,new Color(255, 0, 0))
+                                ,new Sphere(new Vector3d(100f, 50f, -0.8f),50f,new Color(255, 0, 0))
                                 );
         Raytracer raytacer = new Raytracer(W,H,scene);
         Image image = new Image(W,H);
@@ -22,8 +23,8 @@ public class main {
             for (int j = 0; j < H; j++){
 
                Ray r = raytacer.tracer(i,j);
-               float result = scene.sphere.performRayIntersectionTest(r);
-               if (result < 0){
+               float result = scene.sphere.earliestIntersection(r);
+               if (result < 0f){
                    image.plotPixel(i,j,new ImageColor(0,0,0));
 
                }
