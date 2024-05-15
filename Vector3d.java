@@ -32,6 +32,14 @@ public class Vector3d {
         return new Vector3d(scalaer*this.x,scalaer*this.y,scalaer*this.z);
 
     }
+    public float dotProduct(Vector3d a){
+        return (this.x * a.getX() + this.y + a.getY() + this.z * a.getZ());
+
+    }
+    public float magnitude (){
+
+        return (float) Math.sqrt(this.dotProduct(this));
+    }
     public static Vector3d lerp (Vector3d a, Vector3d b,float t){
         return a.scale(1 - t).add(b.scale(t));
 

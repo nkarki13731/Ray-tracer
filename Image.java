@@ -11,7 +11,7 @@ public class Image implements Closeable {
 
     public Image(int w, int h){
         this.image = new BufferedImage(w,h,BufferedImage.TYPE_INT_RGB);
-        graphics = image.createGraphics();
+        this.graphics = image.createGraphics();
     }
     public void plotPixel(int x, int y, ImageColor color){
         graphics.setPaint(new Color(color.getR(),color.getG(),color.getB()));
